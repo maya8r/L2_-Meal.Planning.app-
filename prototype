@@ -1,0 +1,162 @@
+import time
+def print_pause(message, duration):
+    print(message)
+    time.sleep(duration)
+choices_1 = ["1","2","3","4"]
+def meal_plans_lose_weight():
+    print("Breakfast:")
+    print("Option 1:")
+    print("2 boiled eggs, feta cheese")
+    print("Option 2:")
+    print("greek youghurt, fruit")
+    print("Option 3:")
+    print("oatmel, apples")
+    print("Lunch:")
+    print("Option 1:")
+    print("Steak, vegetables, walnut salad")
+    print("Option 2:")
+    print("grilled fish, salad")
+    print("Option 3:")
+    print("Grilled chicken, steamed vegtables")
+    print("Dinner:")
+    print("Option 1:")
+    print("Greek youghurt, fruit")
+    print("Option 2:")
+    print("Youghurt, cucumber salad")
+    print("Option 3:")
+    print("Salad of choice")
+def meal_plans_gain_weight():
+    print("Breakfast:")
+    print("Option 1:")
+    print("Avocado egg sandwich, protien smoothie")
+    print("Option 2:")
+    print("Sandwich, apples")
+    print("Option 3:")
+    print("Beans, bread")
+    print("Lunch:")
+    print("Option 1:")
+    print("Steak, mashed potateos, gravey, rice")
+    print("Option 2:")
+    print("Pesto pasta with shrimps, sauted veggies")
+    print("Option 3:")
+    print("Chicken parm marinera pasta, salad")
+    print("Dinner:")
+    print("Option 1:")
+    print("Omlete")
+    print("Option 2:")
+    print("Youghurt, fruit, nuts")
+    print("Option 3:")
+    print("Frozen youghurt, fruit, feta cheese")
+def meal_plans_maintain():
+    print("Breakfast:")
+    print("Option 1:")
+    print("oats with fruit")
+    print("Option 2:")
+    print("Omlete, smoothie")
+    print("Option 3:")
+    print("Berry smoothie")
+    print("Lunch:")
+    print("Option 1:")
+    print("Ceaser salad")
+    print("Option 2:")
+    print("Tuna wrap, salad")
+    print("Option 3:")
+    print("Chicken cream soup, rice")
+    print("Dinner:")
+    print("Option 1:")
+    print("Fruit, greek youghurt")
+    print("Option 2:")
+    print("Vegetables of choice")
+    print("Option 3:")
+    print("Youghurt, tablespoon honey")
+def meal_plans_gain_muscles():
+    print("Breakfast:")
+    print("Option 1:")
+    print("eggs, protien shake")
+    print("Option 2:")
+    print("Egg sandwich, protien bar")
+    print("Option 3:")
+    print("Veggies omlete, peanut butter and jam sandwich")
+    print("Lunch:")
+    print("Option 1:")
+    print("Chicken wrap")
+    print("Option 2:")
+    print("Salmon bowl")
+    print("Option 3:")
+    print("Meat, salad")
+    print("Dinner:")
+    print("Option 1:")
+    print("Nuts, fruit")
+    print("Option 2:")
+    print("Cottage cheese, cucumber")
+    print("Option 3:")
+    print("Greek youghurt, fruit")
+def user_input():
+    weight = float(input("Enter your weight(kg): "))
+    height = float(input("Enter your height(cm): "))
+    age = float(input ("Enter your age: "))
+    genders=["F","M"]
+    gender=""
+    while gender not in genders:
+        print("What is your gender?")
+        gender = input("Enter F for female or M for male: ").upper()
+        if gender =="F":
+            perfect_weight_f = 45+0.9*(height-150)
+            print("Your perfect weight is "+str(perfect_weight_f)+"kg")
+            if weight <= perfect_weight_f:
+                print_pause("You are underweight and we recommend the gaining weight meal plan." ,2)
+            elif weight >= perfect_weight_f:
+                print_pause("You are overweight and we recommend the losing weight meal plan." ,2)
+            elif weight == perfect_weight_f:
+                print("Your weight is normal and we recommend the maintnance meal plan or the gaining muscles meal plan." ,2)
+        elif gender == "M":
+            perfect_weight_M = 48+1.1*(height-150)
+            print("Your perfect weight is "+str(perfect_weight_M)+"kg")
+            if weight <= perfect_weight_M:
+                print_pause("You are underweight and we recommend the gaining weight meal plan." ,2)
+            elif weight >= perfect_weight_M:
+                print_pause("You are overweight and we recommend the losing weight meal plan." ,2)
+            elif weight == perfect_weight_M:
+                print("Your weight is normal and we recommend the maintnance meal plan or the gaining muscles meal plan." ,2)
+    print_pause("What is your goal?" ,1)
+    print_pause("1. Lose weight" ,1)
+    print_pause("2. Gain weight" ,1)
+    print_pause("3. Maintain" ,1)
+    print_pause("4. Gain muscles" ,1)
+    choice_1 = ""
+    while choice_1 not in choices_1:
+        choice_1 = input("Enter 1, 2, 3, or 4: ")
+        if choice_1 == "1":
+            meal_plans_lose_weight()
+        elif choice_1 == "2":
+            meal_plans_gain_weight()
+        elif choice_1 == "3":
+           meal_plans_maintain()
+        elif choice_1 == "4":
+            meal_plans_gain_muscles()
+choices_2 = ["1","2"]
+print("1. Sign up")
+print("2. Log in")
+choice_2 = ""    
+while choice_2 not in choices_2:
+    choice_2 = input("Enter 1 or 2: ")
+    if choice_2 == "1":
+        name = input("Enter your name: ")
+        email = input("Enter your Email: ")
+        password = input("Enter Password: ")
+        user_input()
+    elif choice_2 == "2":
+        email = input("Enter your Email: ")
+        password = input("Enter Password: ")
+        user_input()
+choices_3=["y","n"]        
+print("Would you like to contact a professional?")
+choice_3=""
+while choice_3 not in choices_3:
+    choice_3 = input("Enter y or n: ").lower()
+    if choice_3 == "y":
+        print("Here's a list of doctors if you'd like to contact one:")
+        print("Sameh Zalam: 01012131415")
+        print("Hisham Mesbah: 01112131415")
+    elif choice_3 == "n":
+        break
